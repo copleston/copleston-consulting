@@ -4,54 +4,97 @@ import Card from '../components/Card.astro';
 ---
 
 <Layout title="Welcome to Astro.">
+	<section class="header">
+		<div class="header_box">
+			<h1><span class="text-gradient">Copleston<br> Consulting</span></h1>
+			<br>
+			<a href="https://www.linkedin.com/in/copleston/" class="contact">[contact me]</a>
+		</div>
+	</section>
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
+
+		
+
 	</main>
+	<video autoplay muted loop id="bgVideo">
+		<source src="bg_vid.mp4" type="video/mp4">
+	</video>
 </Layout>
 
 <style>
 	main {
+		position: fixed;
 		margin: auto;
 		padding: 1.5rem;
 		max-width: 60ch;
 	}
+
 	h1 {
-		font-size: 3rem;
+		font-size: 400%;
 		font-weight: 800;
 		margin: 0;
+		opacity: 100%;
+		/* position: absolute; */
 	}
+	/* Style the video: 100% width and height to cover the entire window */
+	#bgVideo {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		min-width: 100%;
+		min-height: 100%;
+		opacity: 1;
+		z-index: -1;
+		background: #000000;
+	}
+
+	.header {
+		position: fixed;
+		width: 100%;
+		padding:20px 0;
+		/* margin: 0; */
+		margin-top: 0;
+		top: 0;
+		bottom: 0;
+		margin-bottom: 0;
+		text-align: center;
+		background: #000000;
+		opacity: 50%;
+		color: white;
+		box-shadow:  50px black ;
+		border: none;
+		margin: none;
+	}
+
+	.header_box {
+		width: 100%;
+		top: 38%;
+		position: absolute;
+		text-align: center;
+		vertical-align: middle;
+	}
+
+	.contact {
+		font-family: Menlo, monospace;
+		font-size: 200%;
+		opacity: 50%;
+		color: white;
+		text-decoration: none;
+		font-weight: 300;
+	}
+
+	.contact:hover {
+		/* font-size: 250%; */
+		opacity: 100%;
+	}
+
 	.text-gradient {
 		background-image: var(--accent-gradient);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
-		background-size: 400%;
+		background-size: 800%;
 		background-position: 0%;
+		mix-blend-mode:subtract;
 	}
 	.instructions {
 		line-height: 1.6;
